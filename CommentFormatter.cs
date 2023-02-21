@@ -7,7 +7,7 @@ namespace RT.VisualStudio;
 
 public static class CommentFormatter
 {
-    private static string[] _inlineTags = new[] { "see", "paramref", "typeparamref", "c" };
+    private static string[] _inlineTags = new[] { "see", "paramref", "typeparamref", "c", "b", "i", "u" };
     private static string[] _blockLevelTags = new[] { "code", "para", "list", "description" };
 
     private enum CommentType { None, CSharp, VB }
@@ -74,8 +74,13 @@ public static class CommentFormatter
                     if (inCode)
                     {
                         // Append the code without word-wrapping
-                        result.Append(indentation);
-                        result.AppendLine(line);
+                        if (string.IsNullOrWhiteSpace(line))
+                            result.AppendLine(indentation.TrimEnd());
+                        else
+                        {
+                            result.Append(indentation);
+                            result.AppendLine(line);
+                        }
                         if (line.Contains("</code>"))
                             inCode = false;
                     }
