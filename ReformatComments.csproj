@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
-    <TargetPlatforms>win-x64;linux-x64</TargetPlatforms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <SelfContained>false</SelfContained>

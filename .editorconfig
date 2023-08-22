@@ -154,7 +154,7 @@ csharp_indent_block_contents = true
 csharp_indent_braces = false
 csharp_indent_case_contents = true
 csharp_indent_case_contents_when_block = true
-csharp_indent_labels = one_less_than_current
+csharp_indent_labels = no_change
 csharp_indent_switch_labels = true
 csharp_indent_nested_for_stmt = true
 csharp_indent_nested_foreach_stmt = true
@@ -291,6 +291,9 @@ dotnet_diagnostic.ide0042.severity = none
 
 # CS1998: Async method lacks 'await' operators and will run synchronously
 dotnet_diagnostic.cs1998.severity = none
+
+# CS8981: The type name 'info' only contains lower-cased ascii characters - we'll fix it if that happens
+dotnet_diagnostic.cs8981.severity = none
 
 # Rider: Possible 'null' assignment to non-nullable entity (triggers even in nullable:disable contexts)
 resharper_assign_null_to_not_null_attribute_highlighting = none
